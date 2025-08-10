@@ -40,3 +40,10 @@ validation_generator = val_datagen.flow_from_directory(
     subset='validation' 
 )
 
+
+history = model.fit(
+    train_generator,
+    validation_data=validation_generator,
+    epochs=10
+)
+
