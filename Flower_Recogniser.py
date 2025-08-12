@@ -41,9 +41,30 @@ validation_generator = val_datagen.flow_from_directory(
 )
 
 
+model = models.Sequential([
+    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(128, 128, 3)),
+    layers.MaxPooling2D(2, 2),
+
+    layers.Conv2D(64, (3, 3), activation='relu'),
+    layers.MaxPooling2D(2, 2),
+
+    layers.Conv2D(128, (3, 3), activation='relu'),
+    layers.MaxPooling2D(2, 2),
+
+    layers.Flatten(),
+    layers.Dense(128, activation='relu'),
+    layers.Dense(train_generator.num_classes, activation='softmax')  # Output layer
+])
+
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
+
+
 history = model.fit(
     train_generator,
     validation_data=validation_generator,
     epochs=10
 )
+
 
