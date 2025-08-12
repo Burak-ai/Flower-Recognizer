@@ -22,6 +22,7 @@ val_datagen = ImageDataGenerator(
     validation_split=0.2
 )
 
+
 # 80% of data
 train_generator = train_datagen.flow_from_directory(
     'Flowers', 
@@ -56,6 +57,7 @@ model = models.Sequential([
     layers.Dense(train_generator.num_classes, activation='softmax')  # Output layer
 ])
 
+
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
               metrics=['accuracy'])
@@ -66,5 +68,6 @@ history = model.fit(
     validation_data=validation_generator,
     epochs=10
 )
+
 
 
