@@ -63,11 +63,16 @@ model.compile(optimizer='adam',
               metrics=['accuracy'])
 
 
+test_loss, test_acc = model.evaluate(test_generator)
+print(f"Test accuracy: {test_acc:.2f}")
+
+
 history = model.fit(
     train_generator,
     validation_data=validation_generator,
     epochs=10
 )
+
 
 
 
