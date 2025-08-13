@@ -4,6 +4,10 @@ like edges or textures. The output of each filter is a feature map, showing wher
 and how strongly that pattern appears. Multiple filters create multiple feature maps,
 capturing different aspects of the image.
 
+In neural networks, a dense layer (also called a fully connected layer) is a layer
+ where every neuron is connected to every neuron in the previous layer.
+It's mainly used at the end of CNNs to make decisions or predictions
+
 Sequential model is the simplest way to build a neural network in Keras.
 It means you stack layers one after another in order
 
@@ -22,7 +26,11 @@ more non-linearity and deeper feature extraction with fewer parameters
 MaxPooling2D reduces spatial dimensions (width and height) by half, which:
 Makes the model faster and less prone to overfitting.
 Helps capture important features by keeping the strongest activations.
- """
+
+A 3D feature map is what you get when a convolutional layer produces
+ multiple 2D feature maps stacked together.
+"""
+
 
 import os
 import numpy as np
@@ -98,6 +106,7 @@ history = model.fit(
     validation_data=validation_generator,
     epochs=10
 )
+
 
 
 
