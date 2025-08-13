@@ -37,7 +37,7 @@ validation_generator = val_datagen.flow_from_directory(
     'Flowers',
     target_size=(128, 128),
     batch_size=32,
-    class_mode='categorical',
+    class_mode='categorical', # When you have more than two classes
     subset='validation' 
 )
 
@@ -72,6 +72,7 @@ history = model.fit(
     validation_data=validation_generator,
     epochs=10
 )
+
 
 
 
