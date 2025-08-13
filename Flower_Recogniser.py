@@ -1,37 +1,3 @@
-"""
-Convolution applies small filters to an image to detect specific patterns 
-like edges or textures. The output of each filter is a feature map, showing where 
-and how strongly that pattern appears. Multiple filters create multiple feature maps,
-capturing different aspects of the image.
-
-In neural networks, a dense layer (also called a fully connected layer) is a layer
- where every neuron is connected to every neuron in the previous layer.
-It's mainly used at the end of CNNs to make decisions or predictions
-
-Sequential model is the simplest way to build a neural network in Keras.
-It means you stack layers one after another in order
-
-32: Number of filters (feature detectors) — the layer will learn 32 different 
-filters. (3, 3): Size of each filter — a 3x3 grid of pixels.
-
-ReLU (Rectified Linear Unit) turns negative values to zero and keeps positive 
-values, helping the model learn nonlinear patterns.
-
-128x128 — good balance for many beginner to intermediate projects.
-224x224 — standard size used in many famous pretrained models (like VGG, ResNet).
-
-Instead of using 5x5 or 7x7 once, stacking two or three 3x3 layers gives the model
-more non-linearity and deeper feature extraction with fewer parameters
-
-MaxPooling2D reduces spatial dimensions (width and height) by half, which:
-Makes the model faster and less prone to overfitting.
-Helps capture important features by keeping the strongest activations.
-
-A 3D feature map is what you get when a convolutional layer produces
- multiple 2D feature maps stacked together.
-"""
-
-
 import os
 import numpy as np
 import tensorflow as tf
@@ -106,6 +72,7 @@ history = model.fit(
     validation_data=validation_generator,
     epochs=10
 )
+
 
 
 
