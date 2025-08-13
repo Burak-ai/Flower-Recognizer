@@ -1,4 +1,9 @@
 """
+Convolution applies small filters to an image to detect specific patterns 
+like edges or textures. The output of each filter is a feature map, showing where 
+and how strongly that pattern appears. Multiple filters create multiple feature maps,
+capturing different aspects of the image.
+
 Sequential model is the simplest way to build a neural network in Keras.
 It means you stack layers one after another in order
 
@@ -93,6 +98,7 @@ history = model.fit(
     validation_data=validation_generator,
     epochs=10
 )
+
 
 
 
