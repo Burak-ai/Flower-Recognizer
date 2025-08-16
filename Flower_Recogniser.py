@@ -79,20 +79,14 @@ img_array = image.img_to_array(img)
 img_array = np.expand_dims(img_array, axis=0) / 255.0  
 
 prediction = model.predict(img_array)
-predicted_class = np.argmax(prediction)
-
-print("Predicted flower class:", predicted_class)
-
-
-
-class_labels = {v: k for k, v in train_generator.class_indices.items()}
-
 predicted_class_index = np.argmax(prediction)
 
 # Map number → flower name
+class_labels = {v: k for k, v in train_generator.class_indices.items()}
 predicted_class_name = class_labels[predicted_class_index]
 
-print(predicted_class_name)
+print("Predicted flower class (number):", predicted_class_index)
+print("Predicted flower name:", predicted_class_name)
 
 
 
