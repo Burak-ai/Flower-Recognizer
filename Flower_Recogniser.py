@@ -78,7 +78,10 @@ img = image.load_img("sunflower.jpg", target_size=(128, 128))
 img_array = image.img_to_array(img)
 img_array = np.expand_dims(img_array, axis=0) / 255.0  
 
+prediction = model.predict(img_array)
+predicted_class = np.argmax(prediction)
 
+print("Predicted flower class:", predicted_class)
 
 
 
