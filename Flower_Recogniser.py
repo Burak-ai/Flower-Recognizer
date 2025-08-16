@@ -69,6 +69,9 @@ history = model.fit(
     epochs=10
 )
 
+test_loss, test_acc = model.evaluate(validation_generator)
+print(f"Test accuracy: {test_acc:.2f}")
+
 
 img = image.load_img("sunflower.jpg", target_size=(128, 128))
 img_array = image.img_to_array(img)
@@ -83,6 +86,7 @@ predicted_class_name = class_labels[predicted_class_index]
 
 print("Predicted flower class (number):", predicted_class_index)
 print("Predicted flower name:", predicted_class_name)
+
 
 
 
