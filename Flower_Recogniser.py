@@ -29,7 +29,7 @@ train_generator = train_datagen.flow_from_directory(
 )
 
 # 20% of data
-validation_generator = val_datagen.flow_from_directory(
+validation_generator = train_datagen.flow_from_directory(
     'Flowers/flowers',
     target_size=(128, 128),
     batch_size=32,
@@ -83,6 +83,7 @@ predicted_class_name = class_labels[predicted_class_index]
 
 print("Predicted flower class (number):", predicted_class_index)
 print("Predicted flower name:", predicted_class_name)
+
 
 
 
