@@ -55,3 +55,9 @@ validation_data=validation_generator
 This is a separate set of data the model has never seen during training.
 After each epoch, the model is tested on validation data to see:
 Is it improving?. Is it overfitting?
+
+Test generator feeds completely new, unseen images after
+the model is trained. Used to evaluate final model performance.
+
+Class labels map each numeric output of the model to a
+ human-readable category, like a flower name.
