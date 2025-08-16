@@ -66,7 +66,7 @@ print(f"Test accuracy: {test_acc:.2f}")
 history = model.fit(
     train_generator,
     validation_data=validation_generator,
-    epochs=10
+    epochs=30
 )
 
 test_loss, test_acc = model.evaluate(validation_generator)
@@ -86,6 +86,7 @@ predicted_class_name = class_labels[predicted_class_index]
 
 print("Predicted flower class (number):", predicted_class_index)
 print("Predicted flower name:", predicted_class_name)
+
 
 
 
