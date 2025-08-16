@@ -37,3 +37,16 @@ layer into a 1D vector so that Dense layers can process them to make predictions
 softmax activation turns outputs into probabilities summing to 1.
 The neuron with the highest probability corresponds to the predicted class.
  
+Flatten layer converts the 3D feature maps from the last Conv/Pool
+layer into a 1D vector so that Dense layers can process them to make predictions.
+
+softmax activation turns outputs into probabilities summing to 1.
+The neuron with the highest probability corresponds to the predicted class.
+ 
+
+Compiling a model is the step where you tell Keras how the model will learn
+by choosing an optimizer (how weights update), a loss function
+(how errors are measured), and metrics (how performance is tracked)
+
+First use Adam. If the model overfits, behaves oddly,
+or you need ultimate control, use SGD with learning rate tuning.
