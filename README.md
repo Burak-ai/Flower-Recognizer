@@ -50,3 +50,8 @@ by choosing an optimizer (how weights update), a loss function
 
 First use Adam. If the model overfits, behaves oddly,
 or you need ultimate control, use SGD with learning rate tuning.
+
+validation_data=validation_generator
+This is a separate set of data the model has never seen during training.
+After each epoch, the model is tested on validation data to see:
+Is it improving?. Is it overfitting?
