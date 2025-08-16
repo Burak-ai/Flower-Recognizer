@@ -85,6 +85,14 @@ print("Predicted flower class:", predicted_class)
 
 
 
+class_labels = {v: k for k, v in train_generator.class_indices.items()}
+
+predicted_class_index = np.argmax(prediction)
+
+# Map number → flower name
+predicted_class_name = class_labels[predicted_class_index]
+
+print(predicted_class_name)
 
 
 
