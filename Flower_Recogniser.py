@@ -6,6 +6,7 @@ from tensorflow.keras import layers, models
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.preprocessing import image
 
+
 train_datagen = ImageDataGenerator(
     rescale=1./255,
     rotation_range=20,
@@ -14,18 +15,13 @@ train_datagen = ImageDataGenerator(
     shear_range=0.2,
     horizontal_flip=True,
     fill_mode='nearest',
-)
-
-
-val_datagen = ImageDataGenerator(
-    rescale=1./255,
-    validation_split=0.2
+        validation_split=0.2
 )
 
 
 # 80% of data
 train_generator = train_datagen.flow_from_directory(
-    'Flowers', 
+    'Flowers/flowers', 
     target_size=(128, 128),
     batch_size=32,
     class_mode='categorical',
@@ -34,7 +30,7 @@ train_generator = train_datagen.flow_from_directory(
 
 # 20% of data
 validation_generator = val_datagen.flow_from_directory(
-    'Flowers',
+    'Flowers/flowers',
     target_size=(128, 128),
     batch_size=32,
     class_mode='categorical', # When you have more than two classes
@@ -87,6 +83,7 @@ predicted_class_name = class_labels[predicted_class_index]
 
 print("Predicted flower class (number):", predicted_class_index)
 print("Predicted flower name:", predicted_class_name)
+
 
 
 
