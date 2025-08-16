@@ -4,7 +4,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras import layers, models
 from sklearn.model_selection import train_test_split
-
+from tensorflow.keras.preprocessing import image
 
 train_datagen = ImageDataGenerator(
     rescale=1./255,
@@ -72,6 +72,7 @@ history = model.fit(
     validation_data=validation_generator,
     epochs=10
 )
+
 
 
 
