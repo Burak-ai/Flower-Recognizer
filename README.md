@@ -61,3 +61,5 @@ the model is trained. Used to evaluate final model performance.
 
 Class labels map each numeric output of the model to a
  human-readable category, like a flower name.
+
+This image example is a test for my project.
